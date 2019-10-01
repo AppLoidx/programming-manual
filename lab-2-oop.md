@@ -932,7 +932,7 @@ public class App {
 
 В тот момент, когда мы войдем в `func2` часть стека используемая под `func1` будет стёрта, а на её месте будет `func2`
 
-![](C:/Users/Артур/Desktop/manuak/programming-manual-1/stack_no_fake.png)
+![](stack_no_fake.png)
 
 
 
@@ -985,7 +985,7 @@ class App {
 
 Выглядит это так:
 
-![](C:/Users/Артур/Desktop/manuak/programming-manual-1/cat_in_heap.png)
+![](cat_in_heap.png)
 
 
 
@@ -1023,7 +1023,7 @@ public class Task {
 
 Давайте представим, что у нашего кота появилась дополнительная информация о его владельце (отдельное поле в классе `Cat`), которая представлена информацией об имени и количестве денег у него:
 
-![](C:/Users/Артур/Desktop/manuak/programming-manual-1/cat_with_owner.png)
+![](cat_with_owner.png)
 
 
 
