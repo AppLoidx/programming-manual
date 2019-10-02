@@ -1,7 +1,6 @@
 public class Test {
-   public static void plus(){
-	int a = 1;
-    int b = 3;
-   }
- }
-// stack=1, locals=2, args_size=0
+	static int a = 5;
+    public static void main(String ... args){
+        System.out.println(a);	// 5
+    }
+}
