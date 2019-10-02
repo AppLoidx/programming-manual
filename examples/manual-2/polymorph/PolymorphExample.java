@@ -1,4 +1,3 @@
-
 class Person {
 	private String name;
 	private int age;
@@ -43,17 +42,16 @@ class Boss extends Person {
     }
     
 }
-public class InheritanceExample2 {
-    public static void main(String ... args) {
-        Person person = new Person("Lilith", 18);
-	
-		person.doSomething();		// I'm individual person
-		System.out.println(person.getName() + " " + person.getAge()); // Lilith 18
-        
-        Boss boss = new Boss("Boris", 30);
-		System.out.println(boss.getName() + " " + boss.getAge());	// Boris 30
 
-		boss.doSomething();				// I'm individual boss!
-		boss.doSomethingLikeABoss();	// I'm boss!
+public class PolymorphExample {
+    private static void myPolymorphMethod(Person person){
+        System.out.println(person.getName());
+    }
+    public static void main(String ... args) {
+        Person person = new Person("Alice", 21);
+        Boss boss = new Boss("Juan", 38);
+
+        myPolymorphMethod(person);      // Alice
+        myPolymorphMethod(boss);        // Juan
     }
 }
