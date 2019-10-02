@@ -1072,21 +1072,21 @@ public class Task {
 
 ```java
 class MyClass{
-  String val = "default";
+	String val = "default";
 
-  void printValLength(){
-    System.out.println(val.length());
-  }
+	void printValLength(){
+		System.out.println(val.length());
+	}
 
 }
 public class Main {
-  public static void main(String[] args) {
-    MyClass a = new MyClass();
-    a.printValLength();   // 7
+	public static void main(String[] args) {
+		MyClass a = new MyClass();
+		a.printValLength();   // 7
 
-    a.val = null;         // произвольно меняем значение
-    a.printValLength();   // java.lang.NullPointerException
-  }
+		a.val = null;         // произвольно меняем значение
+		a.printValLength();   // java.lang.NullPointerException
+	}
 }
 ```
 
@@ -1094,25 +1094,25 @@ public class Main {
 
 ```java
 class MyClass{
-  private String val = "default";
+	private String val = "default";
 
-  void printValLength(){
-    System.out.println(val.length());
-  }
+	void printValLength(){
+		System.out.println(val.length());
+	}
 
-  public void setVal(String val){
-    if (val == null) this.val = "";
-    else this.val = val;
-  }
+	public void setVal(String val){
+        if (val == null) this.val = "";
+        else this.val = val;
+	}
 
 }
 public class Main {
-  public static void main(String[] args) {
-    MyClass a = new MyClass();
-    a.printValLength();   // 7
+	public static void main(String[] args) {
+        MyClass a = new MyClass();
+        a.printValLength();   // 7
 
-    a.setVal(null);      
-    a.printValLength();   // 0
+        a.setVal(null);      
+        a.printValLength();   // 0
   }
 }
 ```
@@ -1148,31 +1148,31 @@ public class Main {
 
 ```java
 class MyClass{
-  private String val = "default";
+	private String val = "default";
 
-  void printValLength(){
-    System.out.println(val.length());
-  }
+	void printValLength(){
+		System.out.println(val.length());
+	}
 
-  public void setVal(String val){
-    if (val == null) this.val = "";
-    else this.val = val;
-  }
+	public void setVal(String val){
+		if (val == null) this.val = "";
+		else this.val = val;
+	}
 
-  public String getVal(){
-    return this.val;
-  }
+	public String getVal(){
+		return this.val;
+	}
 
 }
 public class Main {
-  public static void main(String[] args) {
+	public static void main(String[] args) {
       
-    MyClass a = new MyClass();
-    a.printValLength();   // 7
-    System.out.println(a.getVal()); // default
+        MyClass a = new MyClass();
+        a.printValLength();   // 7
+        System.out.println(a.getVal()); // default
 
-    a.setVal(null);;      
-    a.printValLength();   // 0
+        a.setVal(null);;      
+        a.printValLength();   // 0
   }
 }
 ```
@@ -1276,10 +1276,10 @@ class Person {
 	private String name;
 	private int age;
 
-    public Person(String name, int age){
-        this.name = name;
-        this.age = age;
-    }
+	public Person(String name, int age){
+		this.name = name;
+		this.age = age;
+	}
 
 	public void doSomething(){
 		System.out.println("I'm individual person");
@@ -1297,13 +1297,13 @@ class Person {
 
 ```java
 class Boss extends Person {
-    public Boss(String name, int age){
-        super(name, age);	// обращаемся к конструктору Person
-    }
+	public Boss(String name, int age){
+		super(name, age);	// обращаемся к конструктору Person
+	}
 
 	public void doSomethingLikeABoss(){
 		System.out.println("I'm a boss!");
-    }
+	}
     
 }
 ```
@@ -1316,27 +1316,27 @@ class Boss extends Person {
 
 ```java
 class Boss extends Person {
-    public Boss(String name, int age){
-        super(name, age);
-    }
+	public Boss(String name, int age){
+		super(name, age);
+	}
 	public void doSomething(){
 		System.out.println("I'm individual boss!");
 	}
 
 	public void doSomethingLikeABoss(){
 		System.out.println("I'm a boss!");
-    }
+	}
 }
 ```
 
 И увидеть, что выполнится метод, который объявлен в `Boss`, а не в `Person`:
 
 ```java
-        Person person = new Person("Lilith", 18);
-		person.doSomething();		// I'm individual person
+Person person = new Person("Lilith", 18);
+person.doSomething();		// I'm individual person
         
-        Boss boss = new Boss("Boris", 30);
-		boss.doSomething();			// I'm individual boss!
+Boss boss = new Boss("Boris", 30);
+boss.doSomething();			// I'm individual boss!
 ```
 
 > Умение находить информацию в интернете - очень важная часть работы. Когда ты можешь получить все из одного места, то нельзя развить навыки поиска решений в интернете.
