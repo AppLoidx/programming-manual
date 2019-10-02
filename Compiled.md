@@ -1888,7 +1888,120 @@ public class ConstructorInhExample {
 
 ### Полиморфизм
 
+Наконец, мы дошли до третьей парадигмы - полиморфизм.
+
+#### Параметрический полиморфизм
+
+Если коротко, то
+
+> Параметрический полиморфизм - способность функции обрабатывать данные разных типов
+
+Опять же представим себе ситуацию, когда нам нужно передавать в аргументы функции несколько разных типов. Например, возвращаясь к примеру с боссом и человеком - мы хотим создать метод, который на вход получает босса **или** человека, а потом выводит его имя.
+
+Тут вы уже могли заметить, что босс по сути является потомком человека - содержит все методы, которые есть у человека. А значит, мы можем указать в функции тип человека и при этом передавать туда босса (потому что это его потомок).
+
+И ведь, действительно, если босс является потомком человека, мы можем гарантировать, что у него есть все методы человека и ошибки вроде `No Such Method Error` или подобного не выйдет.
+
+Пример `polymorph/PolymorphExample.java`
+
+```java
+class Person {
+	private String name;
+	private int age;
+
+    public Person(String name, int age){
+        this.name = name;
+        this.age = age;
+	}
+    public Person(String name, int age, int i){
+        this.name = name;
+        this.age = age;
+	}
+
+	public void doSomething(){
+		System.out.println("I'm individual person");
+	}
+
+	// геттеры\сеттеры
+}
+
+class Boss extends Person {
+    public Boss(String name, int age){
+        super(name, age);
+    }
+	public void doSomethingLikeABoss(){
+		System.out.println("I'm a boss!");
+    }
+    
+}
+
+public class PolymorphExample {
+    private static void myPolymorphMethod(Person person){
+        System.out.println(person.getName());
+    }
+    public static void main(String ... args) {
+        Person person = new Person("Alice", 21);
+        Boss boss = new Boss("Juan", 38);
+
+        myPolymorphMethod(person);      // Alice
+        myPolymorphMethod(boss);        // Juan
+    }
+}
+```
+
+
+
+#### Полиморфизм подтипов
+
+Это свойство позволяет обращаться с помощью единого интерфейса к классу и к любым  его потомкам, также его называют полиморфизмом включения.
+
+```java
+class A {
+    public void doSome(){
+        System.out.println("A doing something");
+    }
+}
+
+class B extends A{
+    @Override
+    public void doSome(){
+        System.out.println("B doing something");
+    }
+}
+
+
+public class PolymorphExample2{
+    public static void main(String ... args){
+        A obj1 = new A();
+        A obj2 = new B();   // полиморфизм in action!
+
+        obj1.doSome();  // A doing something
+        obj2.doSome();  // B doing something
+        
+        // point 1
+    }
+}
+```
+
+
+
+Здесь мы видим, что мы можем объявить тип `obj2` как тип `A`, но при этом создать для него экземпляр класса `B` . Такие операции называют **восходящим преобразованием** - его мы разберем потом.
+
+> **Задание**: попробуйте добавить новый метод в класс B и вызвать его в этом же коде, после вызова двух методов (point 1). Объяснить это явление вам поможет восходящее преобразование
+
+<hr>
+
+
+
+Слишком просто? Тогда давайте углубимся в полиморфизм, затрагивая темы динамического связывания, восходящего преобразования и поведения полиморфных методов при вызове из конструкторов.
+
+Но если вы не любите усложнять себе жизнь или если вы казуал, то можете посмотреть статью на [javarush](https://javarush.ru/quests/lectures/questcore.level02.lecture01), где вполне доступно, как для детей, рассказывают про полиморфизм с картинками.
+
+#### Динамическое связывание
+
 *... печатает текст*
+
+
 
 
 
