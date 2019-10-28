@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PolymorphExample2",
+            "request": "launch",
+            "mainClass": "PolymorphExample2",
+            "projectName": "examples_571bfea2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PolymorphExample",
+            "request": "launch",
+            "mainClass": "PolymorphExample",
+            "projectName": "examples_571bfea2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ConstructorInhExample",
+            "request": "launch",
+            "mainClass": "ConstructorInhExample",
+            "projectName": "examples_571bfea2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - InheritanceExample2",
+            "request": "launch",
+            "mainClass": "InheritanceExample2",
+            "projectName": "examples_571bfea2"
+        }
+    ]
+}
