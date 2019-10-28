@@ -2,7 +2,7 @@
 <h2 align=center><img src="assets/img/book-title.png"/></h2>
 HTML-версия: https://apploidx.github.io/programming-manual/ <br>
 
-PDF: [link](https://github.com/AppLoidx/programming-manual/blob/master/compiled/test/Compiled-v2.3.pdf)
+PDF: [link](https://github.com/AppLoidx/programming-manual/blob/master/compiled/test/Compiled-v3.0.pdf)
 
 Примеры: https://github.com/AppLoidx/programming-manual/tree/master/examples
 
